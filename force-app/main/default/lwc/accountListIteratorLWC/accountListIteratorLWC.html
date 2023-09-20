@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Account List using iterator" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template iterator:it={accounts.data}>
+
+                <li key={it.value.Id}>
+                    <div if:true={it.first} class="list-first"></div>
+                    {it.value.Name}
+                    <div if:true={it.last} class="list-last"></div>
+                </li>
+               
+            </template>
+            <template if:true={accounts.error}>
+                {accounts.error}
+            </template>
+        </div>
+    </lightning-card>
+</template>

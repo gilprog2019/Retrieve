@@ -1,0 +1,44 @@
+<template>
+    <lightning-record-edit-form
+        data-id="contact_Form"
+        onsuccess={handle_Record_Success}
+        onsubmit={handle_Record_Submit} 
+        onerror={handle_Record_Error} 
+        onkeypress={handle_key}
+        object-api-name="Contact"
+        record-id={contactId} >
+ 
+        <div class="slds-grid slds-wrap slds-theme_default">
+             
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 slds-p-horizontal_small">
+                <lightning-input-field field-name="FirstName" > </lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 slds-p-horizontal_small">
+                <lightning-input-field field-name="LastName" > </lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 slds-p-horizontal_small">
+                <lightning-combobox
+                    name="Country"
+                    label="Country"
+                    value={value}
+                    placeholder="Select Country"
+                    options={options}
+                    required="true"
+                    onchange={handle_Country_Change} ></lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 slds-p-horizontal_small">
+                <lightning-input-field field-name="Email" > </lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 slds-p-horizontal_small">
+                <lightning-input-field field-name="Phone" > </lightning-input-field>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 slds-p-horizontal_small">
+                <lightning-input-field field-name="MobilePhone" > </lightning-input-field>
+            </div>
+ 
+            <div class="slds-col slds-size_1-of-1 slds-p-horizontal_small">
+                <lightning-button type="submit" variant="neutral" label="Submit" title="Submit" onclick={handle_Submit_Click}></lightning-button>
+            </div>
+        </div>
+    </lightning-record-edit-form>
+</template>

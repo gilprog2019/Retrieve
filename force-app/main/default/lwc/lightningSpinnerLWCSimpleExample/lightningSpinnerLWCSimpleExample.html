@@ -1,0 +1,12 @@
+<template>
+    <lightning-button label="Toggle" variant="brand" onclick={handleClick}>
+    </lightning-button>
+    <div class="slds-m-around_large">
+        <p if:true={isLoaded}>Content has been loaded.</p>
+         <div if:false={isLoaded} class="slds-is-relative">
+            <lightning-spinner
+                alternative-text="Loading..." variant="brand">
+            </lightning-spinner>
+        </div>
+    </div>
+</template>

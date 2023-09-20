@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="ApexImperativeMethod" icon-name="custom:custom63">
+        <div class="slds-var-m-around_medium">
+            <p class="slds-var-m-bottom_small">
+                <lightning-button
+                label="carrega contatos"
+                onclick={handleLoad}
+                ></lightning-button>        
+            </p>
+            <template lwc:if={contacts}>
+                <template for:each={contacts} for:item="contact">
+                    <p key={contact.Id}>{contact.FirstName}  {contact.LastName}
+                        e sua conta é {contact.Account.Name}
+                    </p>
+                </template>
+            </template>
+        </div>
+        <c-view-source source="lwc/apexImperativeMethod" >
+            Retrieve a list of records using an imperative Apex method call.
+        </c-view-source>    
+    </lightning-card>    
+</template>
