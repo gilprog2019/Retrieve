@@ -1,0 +1,4 @@
+<aura:component implements="lightning:availableForFlowScreens">
+    <!-- more code here -->
+    e só um exemplo de aura component que será incluso no flow
+</aura:component>
